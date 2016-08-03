@@ -1,17 +1,18 @@
 package com.thoughtworks.cornucopia;
 
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.RequestMethod;
 
-/**
- * Handles requests for the application home page.
- */
+
+
 @Controller
+@RequestMapping("/")
 public class HomeController {
-
-    @RequestMapping(value = "/")
-    public String home() {
-        System.out.println("HomeController: Passing through...");
-        return "WEB-INF/views/home.jsp";
+    @RequestMapping(method = RequestMethod.GET)
+    public String printWelcome(ModelMap model) {
+        model.addAttribute("message", "Hello world!");
+        return "home";
     }
 }
