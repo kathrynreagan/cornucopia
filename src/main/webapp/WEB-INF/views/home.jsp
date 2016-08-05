@@ -1,16 +1,27 @@
+<%@ taglib prefix="c" uri="http://www.springframework.org/tags" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
     <title>Gradumake</title>
+    <link href="<c:url value="/scripts/css/base.css" />" rel="stylesheet">
 </head>
 <body>
 <h1>Gradumake</h1>
 <h2>Goodbye Ramen, Hello Quinoa</h2>
-<p1>Gradumake is empowering recent graduates and young professionals to cook healthy, quick, and easy meals for themselves. Join the foodolution.</p1>
+<p1>Gradumake is empowering recent graduates and young professionals to cook healthy, quick, and easy meals for
+    themselves. Join the foodolution.
+</p1>
 <br>
-<textarea id="ingredients_input"></textarea>
 
-<button id="ingredients_submit" onclick="location.href = '/results';">Submit</button>
+<form action="/results" method="post">
+
+    <input type="text" id="ingredients_input" placeholder="List the ingredients you have!" name="ingredients">
+
+    <button type="submit" id="ingredients_submit" name="submitIngredients-btn" value="Submit" formaction="/results"
+            formmethod="post">Submit
+    </button>
+
+</form>
 
 
 </body>
