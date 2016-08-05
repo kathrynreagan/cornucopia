@@ -9,8 +9,9 @@
 <p1>Gradumake is empowering recent graduates and young professionals to cook healthy, quick, and easy meals for themselves. Join the foodolution.</p1>
 <br>
 <textarea id="ingredients_input"></textarea>
-<form>
-    <input id = "ingredients_submit" type = "submit" value="Submit">
-</form>
+
+<button id="ingredients_submit" onclick="location.href = '/results';">Submit</button>
+
+
 </body>
 </html>

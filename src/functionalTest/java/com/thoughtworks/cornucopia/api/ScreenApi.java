@@ -31,4 +31,9 @@ public class ScreenApi {
         assertTrue(driver.findElement(By.id("ingredients_submit")).isDisplayed());
         return this;
     }
+
+    public ScreenApi shouldShowResultsPage() {
+        assertThat(driver.getCurrentUrl(), is(BASE + "/results"));
+        return this;
+    }
 }

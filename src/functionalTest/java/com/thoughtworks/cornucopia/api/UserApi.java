@@ -23,4 +23,9 @@ public class UserApi {
         fillField(driver.findElement(By.id("ingredients_input")), ingredients);
         return this;
     }
+
+    public UserApi clickSubmitIngredientsButton() {
+        driver.findElement(By.id("ingredients_submit")).click();
+        return this;
+    }
 }

@@ -22,7 +22,6 @@ public class FunctionalTestBase {
         user = new UserApi(driver);
         screen = new ScreenApi(driver);
 
-        // set screen size
         driver.manage().window().setSize(new Dimension(1400, 600));
     }
 

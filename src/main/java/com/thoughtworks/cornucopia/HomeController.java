@@ -26,8 +26,7 @@ public class HomeController {
         return "home";
     }
 
-
-    @RequestMapping(method = RequestMethod.POST)
+    @RequestMapping(value = {"/results"}, method = RequestMethod.POST)
     public void sendIngredientsListToRecipeApi(@ModelAttribute("ingredients") String ingredients) {
         recipeApiService.sendRequest(ingredients);
     }
