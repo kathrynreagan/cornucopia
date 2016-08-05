@@ -29,7 +29,6 @@ sourceSets {
 configurations {
     functionalTestCompile.extendsFrom testCompile
     functionalTestRuntime.extendsFrom testRuntime
->>>>>>> [Jace/Ella][#1] added functional tests
 }
 
 dependencies {
