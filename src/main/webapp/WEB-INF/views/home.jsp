@@ -1,11 +1,16 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Cornucopia Home</title>
+    <title>Gradumake</title>
 </head>
 <body>
-<p>${message}</p> <br>
-Hello, cooking millennials!!
+<h1>Gradumake</h1>
+<h2>Goodbye Ramen, Hello Quinoa</h2>
+<p1>Gradumake is empowering recent graduates and young professionals to cook healthy, quick, and easy meals for themselves. Join the foodolution.</p1>
+<br>
 <textarea id="ingredients_input"></textarea>
+<form>
+    <input id = "ingredients_submit" type = "submit" value="Submit">
+</form>
 </body>
 </html>

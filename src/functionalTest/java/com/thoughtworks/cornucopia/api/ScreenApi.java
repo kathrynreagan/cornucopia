@@ -26,4 +26,9 @@ public class ScreenApi {
         assertTrue(driver.findElement(By.id("ingredients_input")).isDisplayed());
         return this;
     }
+
+    public ScreenApi shouldShowSubmitButton() {
+        assertTrue(driver.findElement(By.id("ingredients_submit")).isDisplayed());
+        return this;
+    }
 }

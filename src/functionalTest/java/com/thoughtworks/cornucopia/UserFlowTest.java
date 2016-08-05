@@ -16,7 +16,12 @@ public class UserFlowTest extends FunctionalTestBase {
                 .goToHomePage();
         screen
                 .shouldShowHomePage()
-                .shouldShowTextBox();
+                .shouldShowTextBox()
+                .shouldShowSubmitButton();
+
+        user
+                .inputIngredientsInTextBox("Pasta, Cheese, Tomato");
+
 
     }
 }
