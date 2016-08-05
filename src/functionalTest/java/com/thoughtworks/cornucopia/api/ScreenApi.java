@@ -1,9 +1,11 @@
 package com.thoughtworks.cornucopia.api;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertTrue;
 
 
 public class ScreenApi {
@@ -17,6 +19,11 @@ public class ScreenApi {
 
     public ScreenApi shouldShowHomePage() {
         assertThat(driver.getCurrentUrl(), is(BASE + "/"));
+        return this;
+    }
+
+    public ScreenApi shouldShowTextBox() {
+        assertTrue(driver.findElement(By.id("ingredients_input")).isDisplayed());
         return this;
     }
 }

@@ -12,8 +12,11 @@ public class UserFlowTest extends FunctionalTestBase {
     @Test
     public void userFlow() {
 
-        user.goToHomePage();
-        screen.shouldShowHomePage();
+        user
+                .goToHomePage();
+        screen
+                .shouldShowHomePage()
+                .shouldShowTextBox();
 
     }
 }
