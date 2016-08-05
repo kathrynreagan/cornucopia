@@ -1,9 +1,9 @@
 package com.thoughtworks.cornucopia.api;
 
-import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 
-import static junit.framework.TestCase.assertEquals;
+import static org.hamcrest.core.Is.is;
+import static org.junit.Assert.assertThat;
 
 
 public class ScreenApi {
@@ -15,9 +15,8 @@ public class ScreenApi {
         this.driver = driver;
     }
 
-    @Test
     public ScreenApi shouldShowHomePage() {
-        assertEquals(BASE + "/", driver.getCurrentUrl());
+        assertThat(driver.getCurrentUrl(), is(BASE + "/"));
         return this;
     }
 }
