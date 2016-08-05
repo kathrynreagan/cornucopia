@@ -8,6 +8,8 @@ import org.springframework.ui.ModelMap;
 
 import javax.servlet.http.HttpServletRequest;
 
+import java.net.MalformedURLException;
+
 import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
@@ -46,7 +48,7 @@ public class HomeControllerTest {
 
 
     @Test
-    public void shouldCallRecipeServiceWhenGivenAString() {
+    public void shouldCallRecipeServiceWhenGivenAString() throws MalformedURLException {
         String ingredients = "apple, oranges";
         when(request.getParameter("ingredients")).thenReturn(ingredients);
 
