@@ -2,6 +2,7 @@ package com.thoughtworks.cornucopia;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.springframework.ui.ModelMap;
 
@@ -24,13 +25,13 @@ public class HomeControllerTest {
     @Mock
     HttpServletRequest request;
 
+    @InjectMocks
     private HomeController homeController;
 
 
     @Before
     public void setUp() {
         initMocks(this);
-        homeController = new HomeController(recipeApiService);
     }
 
     @Test
@@ -46,12 +47,12 @@ public class HomeControllerTest {
 
     @Test
     public void shouldCallRecipeServiceWhenGivenAString() {
-        String listOfIngredients = "apple, oranges";
-        when(request.getParameter("ingredients")).thenReturn(listOfIngredients);
+        String ingredients = "apple, oranges";
+        when(request.getParameter("ingredients")).thenReturn(ingredients);
 
         homeController.sendIngredientsListToRecipeApi(request);
 
-        verify(recipeApiService).sendRequest(listOfIngredients);
+        verify(recipeApiService).sendRequest(ingredients);
 
     }
 
