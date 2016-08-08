@@ -10,6 +10,7 @@
 <body>
     <div id="recipe_list">
         <c:forEach var="recipe" items="${recipeList}" varStatus="row">
+            <img src="${recipe.imageUrl}"/>
             <a href="${recipe.url}">${recipe.title}</a><br>
         </c:forEach>
     </div>

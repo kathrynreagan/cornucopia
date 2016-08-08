@@ -1,7 +1,6 @@
 package com.thoughtworks.cornucopia;
 
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
 
 import java.util.Arrays;
@@ -35,7 +34,7 @@ public class JsonParserTest {
 
         Recipe recipe = jsonParser.parseRecipe("");
 
-        assertThat(recipe, is(new Recipe(null, null)));
+        assertThat(recipe, is(new Recipe(null, null, imageUrl)));
     }
 
 
@@ -44,7 +43,7 @@ public class JsonParserTest {
     public void shouldCreateNewRecipeWhenParsingASingleJsonRecipe() {
         Recipe recipe = jsonParser.parseRecipe(oneJsonRecipe);
 
-        assertThat(recipe, is(new Recipe("Chicken, Roasted Butternut Squash and Feta Lasagna", "http://www.closetcooking.com/2010/03/chicken-roasted-butternut-squash-and.html")));
+        assertThat(recipe, is(new Recipe("Chicken, Roasted Butternut Squash and Feta Lasagna", "http://www.closetcooking.com/2010/03/chicken-roasted-butternut-squash-and.html", imageUrl)));
 
     }
 
@@ -52,9 +51,9 @@ public class JsonParserTest {
     public void shouldCreateListOfRecipesWhenParsingEntireJsonResultsList() {
         List<Recipe> recipeList = jsonParser.parseRecipeResultsList(listOfJsonRecipes);
 
-        Recipe recipe1 = new Recipe("Chicken Enchilada Stuffed Zucchini", "http://www.closetcooking.com/2012/09/chicken-enchilada-stuffed-zucchini.html");
-        Recipe recipe2 = new Recipe("Chicken Quesadilla Pie", "http://www.realsimple.com/food-recipes/browse-all-recipes/quesadilla-pie-10000001587000/index.html");
-        Recipe recipe3 = new Recipe("Tuscan Chicken, Zucchini and White Bean Ragout", "http://www.cookstr.com/recipes/tuscan-chicken-zucchini-and-white-bean-ragout");
+        Recipe recipe1 = new Recipe("Chicken Enchilada Stuffed Zucchini", "http://www.closetcooking.com/2012/09/chicken-enchilada-stuffed-zucchini.html", imageUrl);
+        Recipe recipe2 = new Recipe("Chicken Quesadilla Pie", "http://www.realsimple.com/food-recipes/browse-all-recipes/quesadilla-pie-10000001587000/index.html", imageUrl);
+        Recipe recipe3 = new Recipe("Tuscan Chicken, Zucchini and White Bean Ragout", "http://www.cookstr.com/recipes/tuscan-chicken-zucchini-and-white-bean-ragout", imageUrl);
 
         assertThat(recipeList, is(Arrays.asList(recipe1, recipe2, recipe3)));
     }

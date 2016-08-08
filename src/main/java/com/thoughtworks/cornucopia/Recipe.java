@@ -7,10 +7,12 @@ public class Recipe {
 
     private final String title;
     @SerializedName("source_url") private final String url;
+    @SerializedName("image_url") private final String imageUrl;
 
-    public Recipe(String title, String url) {
+    public Recipe(String title, String url, String imageUrl) {
         this.title = title;
         this.url = url;
+        this.imageUrl = imageUrl;
     }
 
     public String getTitle() {
@@ -19,6 +21,10 @@ public class Recipe {
 
     public String getUrl() {
         return url;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
     }
 
     @Override

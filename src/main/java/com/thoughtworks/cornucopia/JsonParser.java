@@ -10,8 +10,8 @@ import java.util.List;
 public class JsonParser {
     public Recipe parseRecipe(String jsonRepresentationOfRecipe) {
 
-        if(jsonRepresentationOfRecipe.equals("")){
-            return new Recipe(null,null);
+        if (jsonRepresentationOfRecipe.equals("")) {
+            return new Recipe(null, null, null);
         }
 
         Gson gson = new Gson();
@@ -28,7 +28,7 @@ public class JsonParser {
 
         List<Recipe> recipesList = new ArrayList<>();
 
-        for(int i = 1; i < recipes.length; i++) {
+        for (int i = 1; i < recipes.length; i++) {
             int endCurlyBraceIndex = recipes[i].indexOf("}");
             recipesList.add(parseRecipe("{" + recipes[i].substring(0, endCurlyBraceIndex + 1)));
         }
