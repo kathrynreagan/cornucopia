@@ -1,11 +1,12 @@
 package com.thoughtworks.cornucopia;
 
-import javax.swing.border.TitledBorder;
+import com.google.gson.annotations.SerializedName;
+
 
 public class Recipe {
 
     private final String title;
-    private final String url;
+    @SerializedName("source_url") private final String url;
 
     public Recipe(String title, String url) {
         this.title = title;
