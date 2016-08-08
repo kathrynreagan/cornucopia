@@ -56,4 +56,19 @@ public class HomeControllerTest {
 
     }
 
+    @Test
+    public void shouldReturnResultsPageWhenThereAreIngredients() throws MalformedURLException {
+        String ingredients = "apple, oranges";
+        when(request.getParameter("ingredients")).thenReturn(ingredients);
+
+        assertEquals("results", homeController.sendIngredientsListToRecipeApi(request));
+    }
+
+    @Test
+    public void shouldReturnHomePageWhenThereAreNoIngredients() throws MalformedURLException {
+        when(request.getParameter("ingredients")).thenReturn("");
+
+        assertEquals("redirect:/", homeController.sendIngredientsListToRecipeApi(request));
+    }
+
 }

@@ -20,11 +20,19 @@ public class UserFlowTest extends FunctionalTestBase {
                 .shouldShowSubmitButton();
 
         user
+                .clickSubmitIngredientsButton();
+
+        screen
+                .shouldShowHomePage();
+//                .shouldShowIngredientsWarning();
+
+        user
                 .inputIngredientsInTextBox("Pasta, Cheese, Tomato")
                 .clickSubmitIngredientsButton();
 
         screen
                 .shouldShowResultsPage();
+
 
 
     }

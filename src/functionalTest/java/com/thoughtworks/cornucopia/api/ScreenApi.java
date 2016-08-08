@@ -36,4 +36,9 @@ public class ScreenApi {
         assertThat(driver.getCurrentUrl(), is(BASE + "/results"));
         return this;
     }
+
+    public ScreenApi shouldShowIngredientsWarning() {
+        assertTrue(driver.findElement(By.id("ingredients_warning")).isDisplayed());
+        return this;
+    }
 }

@@ -22,15 +22,21 @@ public class HomeController {
         this.recipeApiService = recipeApiService;
     }
 
-    @RequestMapping(method = RequestMethod.GET)
+    @RequestMapping( method = RequestMethod.GET)
     public String getHomePage(ModelMap model) {
         return "home";
     }
 
     @RequestMapping(value = {"/results"}, method = RequestMethod.POST)
-    public void sendIngredientsListToRecipeApi(HttpServletRequest request) throws MalformedURLException {
+    public String sendIngredientsListToRecipeApi(HttpServletRequest request) throws MalformedURLException {
         String ingredients = request.getParameter("ingredients");
+
+        if(ingredients.equals("")){
+            return "redirect:/";
+        }
+
         recipeApiService.sendRequest(ingredients);
+        return "results";
     }
 
     @RequestMapping(value = {"/results"}, method = RequestMethod.GET)
