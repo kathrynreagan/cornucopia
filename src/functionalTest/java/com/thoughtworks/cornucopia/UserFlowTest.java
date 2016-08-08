@@ -27,7 +27,7 @@ public class UserFlowTest extends FunctionalTestBase {
 //                .shouldShowIngredientsWarning();
 
         user
-                .inputIngredientsInTextBox("Pasta,Cheese,Tomato")
+                .inputIngredientsInTextBox("Pasta, Cheese, Tomato")
                 .clickSubmitIngredientsButton();
 
         screen

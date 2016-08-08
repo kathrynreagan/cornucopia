@@ -15,7 +15,6 @@ public class JsonParser {
         }
 
         Gson gson = new Gson();
-        System.out.println("************" + jsonRepresentationOfRecipe);
 
         Recipe recipe = gson.fromJson(jsonRepresentationOfRecipe, Recipe.class);
 

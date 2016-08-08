@@ -18,7 +18,7 @@ public class RecipeApiService {
 
 
     public String sendRequest(String ingredients) throws MalformedURLException {
-
+        ingredients = replaceSpaces(ingredients);
         URL apiRequestUrl = createUrlFromIngredients(ingredients);
         String result = recipeApiConnection.retrieveResponse(apiRequestUrl);
 
@@ -32,4 +32,7 @@ public class RecipeApiService {
         return new URL(baseUrlText+ingredients);
     }
 
+    public String replaceSpaces(String ingredients) {
+        return ingredients.replaceAll(" ", "%20");
+    }
 }
