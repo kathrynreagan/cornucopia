@@ -27,11 +27,12 @@ public class UserFlowTest extends FunctionalTestBase {
 //                .shouldShowIngredientsWarning();
 
         user
-                .inputIngredientsInTextBox("Pasta, Cheese, Tomato")
+                .inputIngredientsInTextBox("Pasta,Cheese,Tomato")
                 .clickSubmitIngredientsButton();
 
         screen
-                .shouldShowResultsPage();
+                .shouldShowResultsPage()
+                .shouldShowRecipes(new String[]{"The Best Lasagna Ever", "Pasta Alla Vodka", "Bacon Ranch Pasta Salad"});
 
 
 

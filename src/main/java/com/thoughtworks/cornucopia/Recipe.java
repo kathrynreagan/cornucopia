@@ -13,7 +13,13 @@ public class Recipe {
         this.url = url;
     }
 
+    public String getTitle() {
+        return title;
+    }
 
+    public String getUrl() {
+        return url;
+    }
 
     @Override
     public boolean equals(Object o) {

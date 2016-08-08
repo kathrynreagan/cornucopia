@@ -15,6 +15,7 @@ public class JsonParser {
         }
 
         Gson gson = new Gson();
+        System.out.println("************" + jsonRepresentationOfRecipe);
 
         Recipe recipe = gson.fromJson(jsonRepresentationOfRecipe, Recipe.class);
 
@@ -22,14 +23,15 @@ public class JsonParser {
     }
 
     public List<Recipe> parseRecipeResultsList(String listOfJsonRecipes) {
-        int bracketIndex = listOfJsonRecipes.indexOf("[");
-        listOfJsonRecipes = listOfJsonRecipes.substring(bracketIndex + 1);
+        int startBracketIndex = listOfJsonRecipes.indexOf("[");
+        listOfJsonRecipes = listOfJsonRecipes.substring(startBracketIndex + 1);
         String[] recipes = listOfJsonRecipes.split("\\{");
 
         List<Recipe> recipesList = new ArrayList<>();
 
         for(int i = 1; i < recipes.length; i++) {
-            recipesList.add(parseRecipe("{" + recipes[i].substring(0, (recipes[i].length())-2)));
+            int endCurlyBraceIndex = recipes[i].indexOf("}");
+            recipesList.add(parseRecipe("{" + recipes[i].substring(0, endCurlyBraceIndex + 1)));
         }
 
         return recipesList;

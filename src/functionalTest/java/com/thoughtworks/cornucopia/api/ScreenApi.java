@@ -41,4 +41,12 @@ public class ScreenApi {
         assertTrue(driver.findElement(By.id("ingredients_warning")).isDisplayed());
         return this;
     }
+
+    public ScreenApi shouldShowRecipes(String[] recipeTitles) {
+        String recipeText = driver.findElement(By.id("recipe_list")).getText();
+        for( int i = 0; i < recipeTitles.length; i ++){
+            assertTrue(recipeText.contains(recipeTitles[i]));
+        }
+        return this;
+    }
 }
