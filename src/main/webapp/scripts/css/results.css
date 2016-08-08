@@ -31,7 +31,7 @@ img {
     }
 }
 
-@media screen and (min-width: 680px) {
+@media screen and (min-width: 600px) {
 
     .col {
         width: 32%; /* (100 - 4)/3 */

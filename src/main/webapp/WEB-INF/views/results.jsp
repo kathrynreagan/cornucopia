@@ -1,4 +1,3 @@
-<%--<%@ taglib prefix="c" uri="http://www.springframework.org/tags" %>--%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -8,6 +7,14 @@
     <link href="<c:url value="/scripts/css/results.css" />" rel="stylesheet">
 </head>
 <body>
+
+<div> <h1>Gradumake</h1>
+    <h2>Goodbye Ramen, Hello Quinoa</h2>
+    <br>
+    <h3>Gradumake is empowering recent graduates and young professionals to cook healthy, quick, and easy meals for
+        themselves. Join the foodolution.
+    </h3>
+    <br>
 
     <c:if test="${isRecipeListEmpty}">
         <div id="recipes_not_found">
@@ -28,12 +35,7 @@
             </div>
         </c:forEach>
     </div>
+</div>
 </body>
 </html>
-
-<%--<c:if test="${isItemOutOfStock}">--%>
-    <%--<div id="out-of-stock" class="add-to-cart-failure page-action">--%>
-        <%--Sorry, that item is temporarily out of stock. Please check back later!--%>
-    <%--</div>--%>
-<%--</c:if>--%>
 
