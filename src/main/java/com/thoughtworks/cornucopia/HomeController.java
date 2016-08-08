@@ -32,7 +32,11 @@ public class HomeController {
 
     @RequestMapping(value = {"/results"}, method = RequestMethod.POST)
     public ModelAndView sendIngredientsListToRecipeApi(HttpServletRequest request) throws MalformedURLException {
+        ModelMap model = new ModelMap();
+
         String ingredients = request.getParameter("ingredients");
+
+        model.put("enteredIngredients", ingredients);
 
         if(ingredients.equals("")){
             return new ModelAndView("redirect:/");
@@ -41,7 +45,6 @@ public class HomeController {
         String recipesJson = recipeApiService.sendRequest(ingredients);
 
         List<Recipe> recipes = jsonParser.parseRecipeResultsList(recipesJson);
-        ModelMap model = new ModelMap();
 
         if(recipes.isEmpty()){
             model.put("isRecipeListEmpty", true);

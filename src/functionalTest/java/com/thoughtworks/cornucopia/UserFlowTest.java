@@ -31,7 +31,7 @@ public class UserFlowTest extends FunctionalTestBase {
 
         screen
                 .shouldShowResultsPage()
-                .shouldShowRecipesNotFoundMessage();
+                .shouldShowRecipesNotFoundMessage("New York, Dallas, San Francisco");
 
 
         user

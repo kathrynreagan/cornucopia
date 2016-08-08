@@ -19,19 +19,20 @@
     <c:if test="${isRecipeListEmpty}">
         <div id="recipes_not_found">
             <form action="/" method="get">
-            <h3>
-                Sorry, no recipes were found with those ingredients. Please try again.
-            </h3>
+            <h4>
+                Sorry, no recipes were found with: ${enteredIngredients}
+            </h4>
             <button id="try_again" type="submit">Try Again</button>
             </form>
         </div>
     </c:if>
 
+    <p><h4>Recipes found including ingredients: ${enteredIngredients}</h4></p><br />
     <div id="recipe_list">
-        <c:forEach var="recipe" items="${recipeList}" varStatus="row">
+    <c:forEach var="recipe" items="${recipeList}" varStatus="row">
             <div class="col">
-                <img src="${recipe.imageUrl}"/><br>
-                <a href="${recipe.url}">${recipe.title}</a><br>
+                <a href="${recipe.url}"> <img src="${recipe.imageUrl}"/><br>
+                ${recipe.title}</a><br>
             </div>
         </c:forEach>
     </div>

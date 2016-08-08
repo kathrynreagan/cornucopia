@@ -11,32 +11,33 @@
     margin-bottom: 20px;
 }
 
+#recipe_list{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+h4{
+    text-align: center;
+    color: #FFFFFF;
+    font-size: 18px;
+}
 
 img {
     height: 175px;
     align-content: center;
 }
 
-@media screen and (min-width: 400px) {
-
-    .col{
-        width: 49%; /* (100 - 2)/2 */
-        display: inline-block;
-        font-size: 20px;
-        margin-right: 2%;
-    }
-
-    .col:nth-of-type(2n) {
-        margin-right: 0;
-    }
-}
-
-@media screen and (min-width: 600px) {
 
     .col {
         width: 32%; /* (100 - 4)/3 */
         display: inline-block;
-        font-size: 20px;
+        font-size: 16px;
         margin-right: 2%;
     }
 
@@ -49,4 +50,3 @@ img {
         margin-right: 0;
     }
 
-}
