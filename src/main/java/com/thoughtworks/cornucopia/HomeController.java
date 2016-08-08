@@ -1,7 +1,6 @@
 package com.thoughtworks.cornucopia;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -17,7 +16,6 @@ import java.net.MalformedURLException;
 public class HomeController {
 
     private final RecipeApiService recipeApiService;
-
 
     @Autowired
     public HomeController(RecipeApiService recipeApiService) {

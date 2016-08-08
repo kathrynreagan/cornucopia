@@ -17,8 +17,8 @@
 
     <input type="text" id="ingredients_input" placeholder="List the ingredients you have!" name="ingredients">
 
-    <button type="submit" id="ingredients_submit" name="submitIngredients-btn" value="Submit" formaction="/results"
-            formmethod="post">Submit
+    <button type="submit" id="ingredients_submit" name="submitIngredients-btn" value="Submit" formaction="/results" formmethod="post">
+        Submit
     </button>
 
 </form>

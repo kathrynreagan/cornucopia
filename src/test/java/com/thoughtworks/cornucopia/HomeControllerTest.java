@@ -30,7 +30,6 @@ public class HomeControllerTest {
     @InjectMocks
     private HomeController homeController;
 
-
     @Before
     public void setUp() {
         initMocks(this);
@@ -44,8 +43,7 @@ public class HomeControllerTest {
     @Test
     public void shouldGetResultsPage() {
         assertEquals("results", homeController.getRecipes(modelMap));
-     }
-
+    }
 
     @Test
     public void shouldCallRecipeServiceWhenGivenAString() throws MalformedURLException {
@@ -57,6 +55,5 @@ public class HomeControllerTest {
         verify(recipeApiService).sendRequest(ingredients);
 
     }
-
 
 }
