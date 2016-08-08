@@ -49,4 +49,11 @@ public class ScreenApi {
         }
         return this;
     }
+
+    public ScreenApi shouldShowRecipesNotFoundMessage() {
+        String recipeNotFoundMessage = driver.findElement(By.id("recipes_not_found")).getText();
+        assertThat(recipeNotFoundMessage, is("Sorry, no recipes were found with those ingredients. Please try again."));
+        return this;
+
+    }
 }

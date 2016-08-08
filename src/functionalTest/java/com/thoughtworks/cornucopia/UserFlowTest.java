@@ -24,7 +24,15 @@ public class UserFlowTest extends FunctionalTestBase {
 
         screen
                 .shouldShowHomePage();
-//                .shouldShowIngredientsWarning();
+
+//        user
+//                .inputIngredientsInTextBox("New York, Dallas, San Francisco")
+//                .clickSubmitIngredientsButton();
+//
+//        screen
+//                .shouldShowResultsPage()
+//                .shouldShowRecipesNotFoundMessage();
+
 
         user
                 .inputIngredientsInTextBox("Pasta, Cheese, Tomato")

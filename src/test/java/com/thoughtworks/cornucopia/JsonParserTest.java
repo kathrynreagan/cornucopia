@@ -34,7 +34,7 @@ public class JsonParserTest {
 
         Recipe recipe = jsonParser.parseRecipe("");
 
-        assertThat(recipe, is(new Recipe(null, null, imageUrl)));
+        assertThat(recipe, is(new Recipe(null, null, null)));
     }
 
 
@@ -43,7 +43,7 @@ public class JsonParserTest {
     public void shouldCreateNewRecipeWhenParsingASingleJsonRecipe() {
         Recipe recipe = jsonParser.parseRecipe(oneJsonRecipe);
 
-        assertThat(recipe, is(new Recipe("Chicken, Roasted Butternut Squash and Feta Lasagna", "http://www.closetcooking.com/2010/03/chicken-roasted-butternut-squash-and.html", imageUrl)));
+        assertThat(recipe, is(new Recipe("Chicken, Roasted Butternut Squash and Feta Lasagna", "http://www.closetcooking.com/2010/03/chicken-roasted-butternut-squash-and.html", "http://static.food2fork.com/Chicken,RoastedButternutSquashandFetaLasagna1500d1b9c88a.jpg")));
 
     }
 
@@ -51,9 +51,9 @@ public class JsonParserTest {
     public void shouldCreateListOfRecipesWhenParsingEntireJsonResultsList() {
         List<Recipe> recipeList = jsonParser.parseRecipeResultsList(listOfJsonRecipes);
 
-        Recipe recipe1 = new Recipe("Chicken Enchilada Stuffed Zucchini", "http://www.closetcooking.com/2012/09/chicken-enchilada-stuffed-zucchini.html", imageUrl);
-        Recipe recipe2 = new Recipe("Chicken Quesadilla Pie", "http://www.realsimple.com/food-recipes/browse-all-recipes/quesadilla-pie-10000001587000/index.html", imageUrl);
-        Recipe recipe3 = new Recipe("Tuscan Chicken, Zucchini and White Bean Ragout", "http://www.cookstr.com/recipes/tuscan-chicken-zucchini-and-white-bean-ragout", imageUrl);
+        Recipe recipe1 = new Recipe("Chicken Enchilada Stuffed Zucchini", "http://www.closetcooking.com/2012/09/chicken-enchilada-stuffed-zucchini.html", "http://static.food2fork.com/Chicken2BEnchilada2BStuffed2BZucchini2B5002B02136c2f7367.jpg");
+        Recipe recipe2 = new Recipe("Chicken Quesadilla Pie", "http://www.realsimple.com/food-recipes/browse-all-recipes/quesadilla-pie-10000001587000/index.html", "http://static.food2fork.com/casserole_300d81b7108.jpg");
+        Recipe recipe3 = new Recipe("Tuscan Chicken, Zucchini and White Bean Ragout", "http://www.cookstr.com/recipes/tuscan-chicken-zucchini-and-white-bean-ragout", "http://static.food2fork.com/recipe238045ad.jpg");
 
         assertThat(recipeList, is(Arrays.asList(recipe1, recipe2, recipe3)));
     }

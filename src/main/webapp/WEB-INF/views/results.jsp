@@ -5,14 +5,22 @@
 <html>
 <head>
     <title>Gradumake</title>
-    <link href="<c:url value="/scripts/css/base.css" />" rel="stylesheet">
+    <link href="<c:url value="/scripts/css/results.css" />" rel="stylesheet">
 </head>
 <body>
     <div id="recipe_list">
         <c:forEach var="recipe" items="${recipeList}" varStatus="row">
-            <img src="${recipe.imageUrl}"/>
-            <a href="${recipe.url}">${recipe.title}</a><br>
+            <div class="col">
+                <img src="${recipe.imageUrl}"/><br>
+                <a href="${recipe.url}">${recipe.title}</a><br>
+            </div>
         </c:forEach>
     </div>
 </body>
 </html>
+
+<%--<c:if test="${isItemOutOfStock}">--%>
+    <%--<div id="out-of-stock" class="add-to-cart-failure page-action">--%>
+        <%--Sorry, that item is temporarily out of stock. Please check back later!--%>
+    <%--</div>--%>
+<%--</c:if>--%>
