@@ -6,23 +6,27 @@
     <link href="<c:url value="/scripts/css/base.css" />" rel="stylesheet">
 </head>
 <body>
-<h1>Gradumake</h1>
-<h2>Goodbye Ramen, Hello Quinoa</h2>
-<p1>Gradumake is empowering recent graduates and young professionals to cook healthy, quick, and easy meals for
-    themselves. Join the foodolution.
-</p1>
-<br>
-
-<form action="/results" method="post">
-
-    <input type="text" id="ingredients_input" placeholder="List the ingredients you have!" name="ingredients">
-
-    <button type="submit" id="ingredients_submit" name="submitIngredients-btn" value="Submit" formaction="/results" formmethod="post">
-        Submit
-    </button>
-
-</form>
+    <div>
 
 
+        <h1>Gradumake</h1>
+        <h2>Goodbye Ramen, Hello Quinoa</h2>
+        <br>
+        <h3>Gradumake is empowering recent graduates and young professionals to cook healthy, quick, and easy meals for
+            themselves. Join the foodolution.
+        </h3>
+        <br>
+
+        <form action="/results" method="post">
+
+            <input type="text" id="ingredients_input" placeholder="List the ingredients you have!" name="ingredients">
+
+            <button type="submit" id="ingredients_submit" name="submitIngredients-btn" value="Submit" formaction="/results" formmethod="post">
+                Submit
+            </button>
+
+        </form>
+
+    </div>
 </body>
 </html>
