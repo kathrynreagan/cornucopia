@@ -5,10 +5,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 
-import javax.naming.MalformedLinkException;
 import javax.servlet.http.HttpServletRequest;
 import java.net.MalformedURLException;
+import java.util.List;
 
 
 @Controller
@@ -16,10 +17,12 @@ import java.net.MalformedURLException;
 public class HomeController {
 
     private final RecipeApiService recipeApiService;
+    private JsonParser jsonParser;
 
     @Autowired
-    public HomeController(RecipeApiService recipeApiService) {
+    public HomeController(RecipeApiService recipeApiService, JsonParser jsonParser) {
         this.recipeApiService = recipeApiService;
+        this.jsonParser = jsonParser;
     }
 
     @RequestMapping( method = RequestMethod.GET)
@@ -28,15 +31,21 @@ public class HomeController {
     }
 
     @RequestMapping(value = {"/results"}, method = RequestMethod.POST)
-    public String sendIngredientsListToRecipeApi(HttpServletRequest request) throws MalformedURLException {
+    public ModelAndView sendIngredientsListToRecipeApi(HttpServletRequest request) throws MalformedURLException {
         String ingredients = request.getParameter("ingredients");
 
         if(ingredients.equals("")){
-            return "redirect:/";
+            return new ModelAndView("redirect:/");
         }
 
-        recipeApiService.sendRequest(ingredients);
-        return "results";
+        String recipesJson = recipeApiService.sendRequest(ingredients);
+
+        List<Recipe> recipes = jsonParser.parseRecipeResultsList(recipesJson);
+
+        ModelMap model = new ModelMap();
+        model.put("recipeList", recipes);
+
+        return new ModelAndView("results", model);
     }
 
     @RequestMapping(value = {"/results"}, method = RequestMethod.GET)

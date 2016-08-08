@@ -13,6 +13,8 @@ public class Recipe {
         this.url = url;
     }
 
+
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
