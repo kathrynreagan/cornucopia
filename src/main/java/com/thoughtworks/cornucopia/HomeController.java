@@ -41,9 +41,17 @@ public class HomeController {
         String recipesJson = recipeApiService.sendRequest(ingredients);
 
         List<Recipe> recipes = jsonParser.parseRecipeResultsList(recipesJson);
-
         ModelMap model = new ModelMap();
+
+        if(recipes.isEmpty()){
+            model.put("isRecipeListEmpty", true);
+        } else {
+            model.put("isRecipeListEmpty", false);
+        }
+
         model.put("recipeList", recipes);
+
+
 
         return new ModelAndView("results", model);
     }

@@ -92,6 +92,7 @@ public class HomeControllerTest {
 
         ModelAndView modelAndView = homeController.sendIngredientsListToRecipeApi(request);
 
+        assertTrue(modelAndView.getModelMap().containsAttribute("isRecipeListEmpty"));
         assertTrue(modelAndView.getModelMap().containsAttribute("recipeList"));
     }
 

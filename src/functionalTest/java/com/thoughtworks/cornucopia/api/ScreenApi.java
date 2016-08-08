@@ -3,6 +3,7 @@ package com.thoughtworks.cornucopia.api;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+import static org.hamcrest.CoreMatchers.containsString;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
@@ -45,14 +46,14 @@ public class ScreenApi {
     public ScreenApi shouldShowRecipes(String[] recipeTitles) {
         String recipeText = driver.findElement(By.id("recipe_list")).getText();
         for( int i = 0; i < recipeTitles.length; i ++){
-            assertTrue(recipeText.contains(recipeTitles[i]));
+            assertThat(recipeText, containsString(recipeTitles[i]));
         }
         return this;
     }
 
     public ScreenApi shouldShowRecipesNotFoundMessage() {
         String recipeNotFoundMessage = driver.findElement(By.id("recipes_not_found")).getText();
-        assertThat(recipeNotFoundMessage, is("Sorry, no recipes were found with those ingredients. Please try again."));
+        assertThat(recipeNotFoundMessage, containsString("Sorry, no recipes were found with those ingredients. Please try again."));
         return this;
 
     }

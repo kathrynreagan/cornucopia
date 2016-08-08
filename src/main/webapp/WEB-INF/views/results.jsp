@@ -8,6 +8,18 @@
     <link href="<c:url value="/scripts/css/results.css" />" rel="stylesheet">
 </head>
 <body>
+
+    <c:if test="${isRecipeListEmpty}">
+        <div id="recipes_not_found">
+            <form action="/" method="get">
+            <h3>
+                Sorry, no recipes were found with those ingredients. Please try again.
+            </h3>
+            <button id="try_again" type="submit">Try Again</button>
+            </form>
+        </div>
+    </c:if>
+
     <div id="recipe_list">
         <c:forEach var="recipe" items="${recipeList}" varStatus="row">
             <div class="col">
@@ -24,3 +36,4 @@
         <%--Sorry, that item is temporarily out of stock. Please check back later!--%>
     <%--</div>--%>
 <%--</c:if>--%>
+

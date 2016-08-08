@@ -28,4 +28,9 @@ public class UserApi {
         driver.findElement(By.id("ingredients_submit")).click();
         return this;
     }
+
+    public UserApi clicksTryAgainButton() {
+        driver.findElement(By.id("try_again")).click();
+        return this;
+    }
 }
