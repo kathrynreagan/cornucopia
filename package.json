@@ -1,0 +1,25 @@
+{
+  "name": "cornucopia",
+  "version": "1.0.0",
+  "description": "Dependencies for npm",
+  "main": "karma.conf.js",
+  "dependencies": {},
+  "devDependencies": {
+    "jasmine-core": "2.4.1",
+    "karma-jasmine": "^1.0.2",
+    "karma-phantomjs-launcher": "^1.0.1"
+  },
+  "scripts": {
+    "test": "jasmineTest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kathrynreagan/cornucopia.git"
+  },
+  "author": "Jayson&Sarah",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kathrynreagan/cornucopia/issues"
+  },
+  "homepage": "https://github.com/kathrynreagan/cornucopia#readme"
+}

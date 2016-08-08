@@ -19,7 +19,7 @@
 
         <form action="/results" method="post">
 
-            <input type="text" id="ingredients_input" placeholder="List the ingredients you have!" name="ingredients">
+            <input type="text" id="ingredients_input" placeholder="bacon, lettuce, tomato" name="ingredients">
 
             <button type="submit" id="ingredients_submit" name="submitIngredients-btn" value="Submit" formaction="/results" formmethod="post">
                 Submit
